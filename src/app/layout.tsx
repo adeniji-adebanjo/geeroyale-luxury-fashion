@@ -20,7 +20,18 @@ export const metadata: Metadata = {
   description:
     "Beautifully Crafted Luxury Wears for the modern man. Experience the difference of luxurious fabrics and expert craftsmanship.",
   icons: {
-    icon: "https://res.cloudinary.com/daxvftxtq/images/w_32,h_32,c_fill,g_auto/f_auto,q_auto/v1709628069/cropped-GeeRoyal-Logo-removebg-preview/cropped-GeeRoyal-Logo-removebg-preview.png?_i=AA",
+    icon: [
+      {
+        url: "https://res.cloudinary.com/daxvftxtq/images/w_32,h_32,c_fill,g_auto/f_auto,q_auto/v1709628069/cropped-GeeRoyal-Logo-removebg-preview/cropped-GeeRoyal-Logo-removebg-preview.png?_i=AA",
+      },
+      {
+        url: "https://res.cloudinary.com/daxvftxtq/images/w_180,h_180,c_fill,g_auto/f_auto,q_auto/v1709628069/cropped-GeeRoyal-Logo-removebg-preview/cropped-GeeRoyal-Logo-removebg-preview.png?_i=AA",
+        rel: "apple-touch-icon",
+      },
+    ],
+    shortcut: [
+      "https://res.cloudinary.com/daxvftxtq/images/w_32,h_32,c_fill,g_auto/f_auto,q_auto/v1709628069/cropped-GeeRoyal-Logo-removebg-preview/cropped-GeeRoyal-Logo-removebg-preview.png?_i=AA",
+    ],
   },
 };
 
