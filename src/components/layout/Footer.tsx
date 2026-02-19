@@ -17,9 +17,13 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <h2 className="font-serif text-3xl font-bold tracking-tighter text-gold">
-              GEEROYALE
-            </h2>
+            <Link href="/">
+              <img
+                src="https://res.cloudinary.com/daxvftxtq/images/c_scale,w_372,h_372,dpr_1.5/f_auto,q_auto/v1746190578/GeeRoyal-Logo_35850ffcb/GeeRoyal-Logo_35850ffcb.webp?_i=AA"
+                alt="GEEROYALE"
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
             <p className="text-white/70 max-w-xs leading-relaxed">
               Elevating the experience of dressing well. We envision ourselves
               as partners in our clients’ pursuit of style and confidence.
