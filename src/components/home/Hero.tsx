@@ -1,57 +1,84 @@
-import Link from "next/link";
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?q=80&w=2000&auto=format&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
+    <section className="relative h-[90vh] flex items-center overflow-hidden bg-navy text-white font-sans">
+      {/* Background with luxury gradient and subtle texture */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-gold)_0%,transparent_70%)] opacity-10" />
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop"
+          alt="Luxury Fashion Background"
+          className="w-full h-full object-cover opacity-40 grayscale"
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-navy/50 via-navy/80 to-navy" />
       </div>
 
-      <div className="container relative mx-auto h-full flex flex-col justify-center px-4">
-        <div className="max-w-2xl space-y-6">
-          <p className="text-gold uppercase tracking-[0.3em] font-medium animate-in fade-in slide-in-from-bottom-4 duration-700">
-            Premium Menswear
-          </p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white font-bold leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-            Beautifully Crafted <br /> Luxury Wears
-          </h1>
-          <p className="text-xl text-white/80 max-w-lg leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-700 delay-200">
-            Discover a world where style transcends borders. Our expertly
-            crafted garments are designed to elevate your look and boost your
-            confidence.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-in fade-in slide-in-from-bottom-16 duration-700 delay-300">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <span className="inline-block text-gold uppercase tracking-[0.4em] font-medium text-sm mb-4">
+              Est. 2014 — Lagos, Nigeria
+            </span>
+            <h1 className="text-6xl md:text-8xl font-serif font-bold leading-tight">
+              Beautifully <span className="italic text-gold">Crafted</span>{" "}
+              <br />
+              Luxury Wears.
+            </h1>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-xl md:text-2xl text-white/70 max-w-2xl leading-relaxed font-light"
+          >
+            Experience the pinnacle of African craftsmanship and contemporary
+            luxury fashion. Tailored to perfection for the modern man.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-6 pt-8"
+          >
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold/90 text-navy font-bold uppercase tracking-widest h-14 px-8"
+              className="bg-gold hover:bg-gold/90 text-navy font-bold uppercase tracking-[0.2em] h-16 px-12 text-sm shadow-[0_10px_30px_-10px_rgba(212,175,55,0.4)] transition-all hover:translate-y-[-2px] cursor-pointer"
             >
-              Explore Collection
+              Shop Collection
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-navy font-bold uppercase tracking-widest h-14 px-8"
+              className="border-white/20 hover:bg-white/5 text-white font-bold uppercase tracking-[0.2em] h-16 px-12 text-sm backdrop-blur-sm transition-all hover:translate-y-[-2px] cursor-pointer"
             >
-              Bespoke Service
+              The Bespoke Experience
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-white/50 text-xs uppercase tracking-widest">
-          Scroll Down
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30 rotate-90 origin-left ml-4">
+          Scroll
         </span>
-        <div className="w-px h-12 bg-gradient-to-b from-gold to-transparent" />
-      </div>
+        <div className="w-px h-12 bg-linear-to-b from-gold/50 to-transparent" />
+      </motion.div>
     </section>
   );
 }
